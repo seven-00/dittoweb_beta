@@ -50,10 +50,10 @@
 
 <div class="login-container">
     <h2>Login</h2>
-    <form action="#" method="post">
+    <form action="<?= base_url("login")?>" method="post">
         <div class="form-group">
             <label for="username">Email</label>
-            <input type="text" id="username" name="username" required>
+            <input type="Email" id="email" name="email" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>

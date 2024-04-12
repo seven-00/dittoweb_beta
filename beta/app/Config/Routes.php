@@ -8,7 +8,12 @@ use CodeIgniter\Router\RouteCollection;
 
 
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Auth::login');
-$routes->get('/register','Auth::register');
+$routes->get('main/login', 'Login::login');
+$routes->get('main/register','Register::register');
 
 $routes->get('/testdata','Auth::users');
+$routes->get('/main','Welcome::index');
+$routes->get('/main/test','Welcome::test');
+
+$routes->post('login','Login::do_login');
+$routes->get('/main/content','Content::index');

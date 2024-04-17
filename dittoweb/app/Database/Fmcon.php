@@ -11,11 +11,9 @@ class Fmcon{
                         CURLOPT_SSL_VERIFYHOST => false,
                         CURLOPT_SSL_VERIFYPEER =>false,
                         CURLOPT_CUSTOMREQUEST =>$data['request'],
-                        CURLOPT_POSTFIELDS =>'',
+                        CURLOPT_POSTFIELDS =>$data['postfields']??'',
                         CURLOPT_HTTPHEADER => $headers
             ));
-
-
             $response = curl_exec($con);
             curl_close($con);
             $jsonResponse = json_decode($response,true);

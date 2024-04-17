@@ -7,28 +7,29 @@ use fmRESTor\fmRESTor;
 use App\Models\UsersModel;
 class Login extends BaseController
 {
-    public function login(){
-        return view('templates/header')
-              .view('login_page')
-              .view('templates/footer');
-    }
     public function do_login(){
         $model = new UsersModel();
 
         
        $email = $this->request->getPost('email');
        $password = $this->request->getPost('password');
-       $auth = $model->authUser($email,$password);
-       if($auth){
-        return view('templates/header')
-        .view('authSuccess')
-        .view('templates/footer');
+       $token = $this->session->get('token');
+       $authResponse = $model->authUser($email,$password,$token);
+       $authResponseCode = $authResponse['messages'][0]['code'];
+       if($authResponseCode =='0' )
+       {
+            if ($authResponse['response']['data'][0]['fieldData']['userPass']==$password)
+            {
+                echo "Auth successful";
+            }
+            else
+            {
+                echo "Auth unsuccessful";
+            }
        }
-       else{
-        return view('templates/header')
-              .view('authFail')
-              .view('templates/footer');
+       else
+       {
+        echo "error";
        }
-
     }
 }

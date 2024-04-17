@@ -1,9 +1,9 @@
 FROM php:8.2.12-apache
 
 
-COPY dittoweb/ /var/www/html/
+COPY dittoweb/ /var/www/dittoweb.com/
 
-
+#define servername as localhost
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 

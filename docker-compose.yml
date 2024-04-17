@@ -3,7 +3,8 @@ services:
         web:
           build: .
           volumes: 
-              - ./dittoweb:/var/www/html
+              - ./dittoweb:/var/www/dittoweb.com
               - ./configs/php.ini:/usr/local/etc/php/php.ini
+              - ./configs/custom-apache.conf:/etc/apache2/sites-available/custom-apache.conf
           ports:
-              - 80:80 
+              - 85:80 

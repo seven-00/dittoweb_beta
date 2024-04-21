@@ -7,10 +7,12 @@ use fmRESTor\fmRESTor;
 use App\Models\UsersModel;
 class Login extends BaseController
 {
-    public function do_login(){
-        $model = new UsersModel();
 
-        
+    public function login (){
+        return view('login_page');
+    }
+    public function do_login(){
+       $model = new UsersModel();
        $email = $this->request->getPost('email');
        $password = $this->request->getPost('password');
        $token = $this->session->get('token');
@@ -20,16 +22,21 @@ class Login extends BaseController
        {
             if ($authResponse['response']['data'][0]['fieldData']['userPass']==$password)
             {
-                echo "Auth successful";
+                return redirect()->to('/content'); 
             }
             else
             {
-                echo "Auth unsuccessful";
+                echo "check password";
             }
+       }
+       else if($authResponseCode=='952'||$authResponseCode=='10'){
+            $token = $model->genToken();
+            $this->session->set('token',$token);
+            $this->do_login();
        }
        else
        {
-        echo "error";
+        print_r($authResponse);
        }
     }
 }

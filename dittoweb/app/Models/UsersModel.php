@@ -25,4 +25,33 @@ class UsersModel extends Fmcon{
         );
         return $this->connection($curlopts,$headers);
     }
+
+    function genToken()
+    {
+        $getToken = new TokenModel();
+        $jsondata = $getToken->getToken();
+        $token = $jsondata['response']['token'];
+        return $token;
+    }
+    function newUser($fname,$lname,$email,$password,$token){   
+        $curlopts=array(
+            'request' => 'POST',
+            'endpoint'=> 'layouts/Users/records',
+            'postfields'=>'{
+                "fieldData":{
+                    "userFirstName":"'.$fname.'",
+                    "userLastName":"'.$lname.'",
+                    "userEmail":"'.$email.'",
+                    "userPass":"'.$password.'"
+                }
+            }'
+            
+        );
+        $headers=array(
+            'Content-Type: application/json',
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+
+    }
 }

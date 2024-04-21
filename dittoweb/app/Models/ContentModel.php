@@ -14,4 +14,14 @@ class ContentModel extends Fmcon{
         );
         return $this->connection($curlopts,$headers);
   }
+  function getContentDetails($token){
+    $curlopts=array(
+        'request' => 'GET',
+        'endpoint'=> 'layouts/content_details/records',
+    );
+    $headers=array(
+        "Authorization: Bearer ".$token
+    );
+    return $this->connection($curlopts,$headers);
+}
 }   

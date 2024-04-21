@@ -33,4 +33,8 @@ RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install pdo_sqlite
 
+
+RUN sudo a2dissite 000-default.conf
+RUN sudo a2ensite custom-apache.conf
+RUN sudo a2enmod rewrite 
 EXPOSE 80

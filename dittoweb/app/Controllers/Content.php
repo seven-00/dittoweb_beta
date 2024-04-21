@@ -12,10 +12,23 @@ class Content extends BaseController
         $model = new ContentModel();
         $token = $this->session->get('token');
         $resdata = $model->getContent($token);
-        echo "<pre>";
-        print_r(var_dump($resdata));
-        // return view('templates/header')
-        //     .view('welcome_page')
-        //     .view('templates/footer');
+        $imgdata = $model->getContentDetails($token);
+       $contentpayload=[];
+       foreach ($imgdata['response']['data'] as $photo) {
+        $contentId = $photo['fieldData']['content_id'];
+        $contentpayload[$contentId]['content-photo'][] = $photo['fieldData']['content_photo'];
+       }
+       foreach ($resdata['response']['data'] as $content) {
+        $contentId = $content['fieldData']['content_id'];
+        $contentpayload[$contentId]['content-name'][] = $content['fieldData']['content_name'];
+       }
+        
+        $data =array(
+            // "count"=>$resdata['response']['dataInfo']['foundCount'],
+            "contentimage"=>$resdata['response']['data']
+        );
+        
+
+        return view("content_page",array('contentpayload'=>$contentpayload));   
     }
 }

@@ -5,6 +5,7 @@ services:
           volumes: 
               - ./dittoweb:/var/www/dittoweb.com
               - ./configs/php.ini:/usr/local/etc/php/php.ini
+              - ./configs/virtual-host.conf:/etc/apache2/sites-available/virtual-host.conf
               - ./configs/custom-apache.conf:/etc/apache2/sites-available/custom-apache.conf
           ports:
               - 85:80 

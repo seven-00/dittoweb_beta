@@ -23,5 +23,43 @@ class ContentModel extends Fmcon{
         "Authorization: Bearer ".$token
     );
     return $this->connection($curlopts,$headers);
-}
+    
+    }
+    function getOneContent($token,$contentId){
+        $curlopts=array(
+            'request' => 'POST',
+            'endpoint'=> 'layouts/content/_find',
+            'postfields'=>'{
+                "query":[
+                    {
+                        "content_id": "=='.$contentId.'"
+                    }
+                 ]  
+            }'
+        );
+        $headers=array(
+            'Content-Type: application/json',
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+    }
+    function getOneContentDetails($token,$contentId){
+        $curlopts=array(
+            'request' => 'POST',
+            'endpoint'=> 'layouts/content_details/_find',
+            'postfields'=>'{
+                "query":[
+                    {
+                        "content_id": "=='.$contentId.'"
+                    }
+                 ]  
+            }'
+        );
+        $headers=array(
+            'Content-Type: application/json',
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+    }
+    
 }   

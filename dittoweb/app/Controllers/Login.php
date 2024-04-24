@@ -22,7 +22,9 @@ class Login extends BaseController
        {
             if ($authResponse['response']['data'][0]['fieldData']['userPass']==$password)
             {
-                return redirect()->to('/content'); 
+                $this->session->set('user',$authResponse['response']['data'][0]['fieldData']['userId']);
+                return redirect()->to('/content');
+
             }
             else
             {
@@ -33,6 +35,7 @@ class Login extends BaseController
             $token = $model->genToken();
             $this->session->set('token',$token);
             $this->do_login();
+            return redirect()->to('/content');
        }
        else
        {

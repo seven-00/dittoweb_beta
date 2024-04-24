@@ -54,4 +54,22 @@ class UsersModel extends Fmcon{
         return $this->connection($curlopts,$headers);
 
     }
+    function findUser($userId,$token){
+        $curlopts=array(
+            'request' => 'POST',
+            'endpoint'=> 'layouts/Users/_find',
+            'postfields'=>'{
+                "query":[
+                    {
+                        "userId": "=='.$userId.'"
+                    }
+                 ]  
+            }'
+        );
+        $headers=array(
+            'Content-Type: application/json',
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+    }
 }

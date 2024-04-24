@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\Register;
+use App\Controllers\Content;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -25,4 +25,6 @@ $routes->get('/register','Register::register');
 $routes->post('/register','Register::do_Register');
 
 #content routes
-$routes->get('/content','Content::index');
+$routes->get('/content','Content::content');
+$routes->get('/content/(:segment)',[Content::class, 'content_details']);
+$routes->post('content/add_review/(:segment)',[Content::class, 'add_review']);

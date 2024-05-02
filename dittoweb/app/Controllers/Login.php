@@ -23,12 +23,19 @@ class Login extends BaseController
             if ($authResponse['response']['data'][0]['fieldData']['userPass']==$password)
             {
                 $this->session->set('user',$authResponse['response']['data'][0]['fieldData']['userId']);
+                
+                $this->session->set('fname',$authResponse['response']['data'][0]['fieldData']['userFirstName']);
+                $this->session->set('lname',$authResponse['response']['data'][0]['fieldData']['userLastName']);
+
                 return redirect()->to('/content');
 
             }
             else
             {
-                echo "check password";
+                $errormessage = '<div id="error-message" class="alert alert-danger" role="alert">
+                Incorrect email or password. Please try again.
+              </div>';
+                return view('login_page',array('errormessage'=>$errormessage));
             }
        }
        else if($authResponseCode=='952'||$authResponseCode=='10'){
@@ -41,5 +48,10 @@ class Login extends BaseController
        {
         print_r($authResponse);
        }
+    }
+    public function logout()
+    {
+        $this->session->session_destroy;
+        return view('login_page');
     }
 }

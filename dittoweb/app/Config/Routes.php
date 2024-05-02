@@ -19,6 +19,8 @@ $routes->get('/main/test','Welcome::test');
 #login routes
 $routes->get('/login','Login::login');
 $routes->post('/login','Login::do_login');
+$routes->get('/logout','Login::logout');
+
 
 #Register routes
 $routes->get('/register','Register::register');
@@ -28,3 +30,9 @@ $routes->post('/register','Register::do_Register');
 $routes->get('/content','Content::content');
 $routes->get('/content/(:segment)',[Content::class, 'content_details']);
 $routes->post('content/add_review/(:segment)',[Content::class, 'add_review']);
+$routes->post('content/dynamicload','Content::dynamic_load');
+$routes->post('content','Content::search_content');
+
+
+#user routes
+$routes->get('/user','User::user_details');

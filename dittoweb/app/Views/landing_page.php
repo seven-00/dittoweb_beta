@@ -88,6 +88,10 @@
             opacity: 1;
             transition: opacity 0.5s ease;
         }
+        .custom-theme{
+            background-color: black!important;
+            
+        }
     </style>
 
     <title>Ditto</title>
@@ -110,7 +114,7 @@
                 <source src="assets/videos/bgm.webm" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark  custom-theme">
                 <div class="container px-7">
                     <a class="navbar-brand" href="/dittoweb.com/">
                         Dittoweb

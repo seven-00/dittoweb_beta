@@ -61,5 +61,56 @@ class ContentModel extends Fmcon{
         );
         return $this->connection($curlopts,$headers);
     }
+    function getDynamicContentDetails($token,$limit,$offset){
+        $curlopts=array(
+            'request' => 'GET',
+            'endpoint'=> 'layouts/content_details/records/?script=getPhotoUrl&_limit='.$limit.'&_offset='.$offset.'',
+        );
+        $headers=array(
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+    }
+    function getDynamicContent($token,$limit,$offset){
+        $curlopts=array(
+            'request' => 'GET',
+            'endpoint'=> 'layouts/content/records/?_limit='.$limit.'&_offset='.$offset.'',
+        );
+        $headers=array(
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+    }
+    function getInitialContent($token){
+        $curlopts=array(
+            'request' => 'GET',
+            'endpoint'=> 'layouts/content/records/?_limit=4&_offset=1',
+        );
+        $headers=array(
+            "Authorization: Bearer ".$token
+        );
+        return $this->connection($curlopts,$headers);
+  }
+  function getInitialContentDetails($token){
+    $curlopts=array(
+        'request' => 'GET',
+        'endpoint'=> 'layouts/content_details/records/?script=getPhotoUrl&_limit=4&_offset=1',
+    );
+    $headers=array(
+        "Authorization: Bearer ".$token
+    );
+    return $this->connection($curlopts,$headers);
+}
+function findContent($token,$searchstring)
+{
+    $curlopts=array(
+        'request' => 'GET',
+        'endpoint'=> 'layouts/content/records/?script=searchScript&script.param='.$searchstring.'',
+    );
+    $headers=array(
+        "Authorization: Bearer ".$token
+    );
+    return $this->connection($curlopts,$headers);
+}
     
 }   

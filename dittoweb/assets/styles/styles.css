@@ -1,0 +1,176 @@
+.custom-title {
+    font-family: "Montserrat", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    font-size: 20px;
+}
+
+.custom-rounded {
+    border-radius: 10px !important;
+
+}
+
+.bg-custom {
+    background-color: black;
+}
+
+.custom-text {
+    font-family: "Open-Sans", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    color: black;
+}
+
+.custom-theme {
+    background-color: #005A7C !important;
+
+}
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-cont {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid red;
+    height: 300px;
+
+}
+
+.img-hover:hover {
+    transform: scale(1.1);
+    /* Increase size on hover */
+    transition: transform 0.5s ease;
+    /* Smooth transition */
+}
+
+.search-box {
+    background-color: #F5F5DC !important;
+    color: black !important;
+    max-height: 500px !important;
+}
+
+.autocomplete-popover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    /* Background color on hover */
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* ensure it appears above other content */
+}
+
+.custom-rounded {
+    border-radius: 10px !important;
+
+}
+
+.card-effect {
+    font-family: "Montserrat", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    color: white;
+}
+
+.card-img-overlay{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Adjust opacity for darkness */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.card:hover .card-img-overlay{
+    opacity: 1;
+}
+
+.fade-out-loader {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* Adjust the duration and easing as needed */
+}
+
+.fade-in-loader {
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+.carousel-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Push the background image behind the content */
+}
+
+
+.carousel-caption .container {
+    z-index: 1; 
+    width: 100%;
+    /* Make sure the text is above the background image */
+}
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    
+    bottom: 0; /* semi-transparent black background */
+    color: #fff; /* white text color */
+}
+
+.position-relative {
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    /* semi-transparent black background */
+    display: flex; /* initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* ensures it's above other content */
+}
+
+

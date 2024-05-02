@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search Results</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .custom-search-input {
+      max-width: 300px; /* Adjust the width as needed */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    
+    <!-- Search Bar -->
+    <form class="mb-4 text-center">
+      <div class="input-group input-group-sm justify-content-center">
+        <input type="text" class="form-control custom-search-input" placeholder="Search for movies...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Number of Search Results -->
+    <p class="mb-3">Showing <span id="numResults">0</span> results</p>
+
+    <div class="row">
+      <!-- Example movie card, repeat as needed for each search result -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Movie Poster">
+          <div class="card-body">
+            <h5 class="card-title">Movie Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- End of movie card example -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // Example JavaScript to update the number of search results
+    document.getElementById('numResults').innerText = document.querySelectorAll('.card').length;
+  </script>
+</body>
+</html>

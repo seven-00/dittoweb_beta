@@ -44,6 +44,7 @@
                 </a>
               </div>
               <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Sign in to your account</h2>
+              <?php echo $errormessage??""; ?>
               <form action="/dittoweb.com/login" method="post">
                 <div class="row gy-2 overflow-hidden">
                   <div class="col-12">
@@ -80,7 +81,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </div>

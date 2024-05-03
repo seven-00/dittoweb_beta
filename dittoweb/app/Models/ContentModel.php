@@ -112,5 +112,26 @@ function findContent($token,$searchstring)
     );
     return $this->connection($curlopts,$headers);
 }
-    
+function findContentDetails($token,$searchstring)
+{
+    $curlopts=array(
+        'request' => 'GET',
+        'endpoint'=> 'layouts/content_details/records/?script=searchDetails&script.param='.$searchstring.'',
+    );
+    $headers=array(
+        "Authorization: Bearer ".$token
+    );
+    return $this->connection($curlopts,$headers);
+}
+function findType($token,$searchstring)
+{
+    $curlopts=array(
+        'request' => 'GET',
+        'endpoint'=> 'layouts/content_details/records/?script=searchType&script.param='.$searchstring.'',
+    );
+    $headers=array(
+        "Authorization: Bearer ".$token
+    );
+    return $this->connection($curlopts,$headers);
+}
 }   

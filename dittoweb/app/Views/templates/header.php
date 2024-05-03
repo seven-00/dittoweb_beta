@@ -28,24 +28,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/dittoweb.com/content">Home</a></li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!" onclick="updateDropDown('All')">All</a></li>
+                            <li><a class="dropdown-item" href="#!">All</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#!" onclick="updateDropDown('Movies')">Movies</a></li>
-                            <li><a class="dropdown-item" href="#!" onclick="updateDropDown('Tv shows')">Tv shows</a></li>
+                            <li><a class="dropdown-item" href="/dittoweb.com/content/movies">Movies</a></li>
+                            <li><a class="dropdown-item" href="/dittoweb.com/content/Tv_shows">Tv shows</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>  
                 <div>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="<?php echo base_url() ?>assets/images/pfp.png" height="35" width="35" class="mr-3" alt="User Avatar">    
-                                <?php echo $userfname." ".$userlname ?>
+                                <?php echo $userfname." ".$userlname; ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                                     <li><a class="dropdown-item" href="/dittoweb.com/user">Your Account</a></li>

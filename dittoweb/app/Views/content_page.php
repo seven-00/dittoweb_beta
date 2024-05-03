@@ -2,57 +2,58 @@
     <img src="assets/images/loader.svg" height="60" width="60" alt="">
 </div>
 <!-- Header-->
-<header class="bg-dark">
-    <div id="carouselWithSearch" class="position-relative">
-        <div id="searchBar" class="overlay d-flex align-items-center justify-content-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        <form class="d-flex justify-content-center" method="post" action="/dittoweb.com/content">
-                            <div class="input-group">
-                                <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <div class="d-flex align-items-center">
-                        <img src="<?php echo base_url() ?>assets/images/slider1bg.jpg" class="d-block" style="background-size: cover;" alt="">
-                        <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
-                            <div class="container px-4 px-lg-5">
-                                <h1 class="display-2 text-white">Top Today</h1>
-                                <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <div class="d-flex align-items-center">
-                        <img src="<?php echo base_url() ?>assets/images/slider2bg.jpg" class="d-block" style="background-size: cover;" alt="">
-                        <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
-                            <div class="container px-4 px-lg-5">
-                                <h1 class="display-2 text-white">Top Yesterday</h1>
-                                <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
-                            </div>
+    <header class="bg-custom">
+        <div id="carouselWithSearch" class="position-relative">
+            <div id="searchBar" class="overlay d-flex align-items-center justify-content-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <form class="d-flex justify-content-center" method="post" action="/dittoweb.com/content">
+                                <div class="input-group">
+                                    <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="d-flex align-items-center">
+                            <img src="<?php echo base_url() ?>assets/images/slider1bg.jpg" class="d-block" style="background-size: cover;" alt="">
+                            <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
+                                <div class="container px-4 px-lg-5">
+                                    <h1 class="display-2 text-white">Top Today</h1>
+                                    <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="d-flex align-items-center">
+                            <img src="<?php echo base_url() ?>assets/images/slider2bg.jpg" class="d-block" style="background-size: cover;" alt="">
+                            <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
+                                <div class="container px-4 px-lg-5">
+                                    <h1 class="display-2 text-white">Top Yesterday</h1>
+                                    <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
 <!-- Section-->
 <section class="py-5 bg-custom">
@@ -65,7 +66,7 @@
                             <!-- Product image-->
                             <img class="card-img-top custom-rounded " src="<?php echo $item['content-photo'] ?>" alt="...">
                             <div class="card-img-overlay custom-rounded">
-                                <h5 class="card-title "><?php echo $item['content-name'] ?></h5>
+                               
                                 <p class="card-subtitle "><?php echo $item['content-type'] ?></p>
                                 <p class="card-subtitle text-muted"><?php echo $item['content-year'] ?></p>
                             </div>

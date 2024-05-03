@@ -12,12 +12,13 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
+                                <form action="user/save" method="POST">
                                 <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid mb-3 rounded-circle">
-                                <input type="email" class="form-control mb-3" id="inputEmail" placeholder="Email Address" value="<?php echo $userData['userEmail']?>">
+                                <input type="email"class="form-control mb-3" id="inputEmail" placeholder="Email Address" value="<?php echo $userData['userEmail']?>">
                                 <input type="text" class="form-control mb-3" id="inputFirstName" placeholder="First Name" value="<?php echo $userData['userFirstName']?>">
                                 <input type="text" class="form-control mb-3" id="inputLastName" placeholder="Last Name" value="<?php echo $userData['userLastName']?>">
-                                <button type="button" class="btn btn-primary me-2">Save Changes</button>
-                                <button type="button" class="btn btn-secondary">Reset Password</button>
+                               
+                                </form>
                             </div>
                         </div>
                     </div>

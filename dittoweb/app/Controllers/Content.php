@@ -137,13 +137,42 @@ class Content extends BaseController
     }
     public function search_content()
     {
-        $content = new ContentModel();
-        $data = $this->request->getPost('search');
-        $token = $this->session->get('token');
         
-        $res = $content->findContent($token,$data);
-        echo "<pre>";
-        print_r($res);
+        $model = new ContentModel();
+        $token = $this->session->get('token');
+        $searchQuery = $this->request->getPost('search');
+        $content = $model->findContent($token,$searchQuery);
+        $contentdetails = $model->findContentDetails($token,$searchQuery);
+        $userFirstName = $this->session->get('fname');
+        $userLastName = $this->session->get('lname');
+
+        $contentpayload = [];
+        $contentdata=[];
+        if ($content['messages'][0]['code'] == 0) {
+        foreach ($content['response']['data'] as $contentdata) {
+            $contentId = $contentdata['fieldData']['content_id'];
+            $contentpayload[$contentId]['content-name'] = $contentdata['fieldData']['content_name'];
+        }
+        foreach ($contentdetails['response']['data'] as $contentdata) {
+            $contentId = $contentdata['fieldData']['content_id'];
+            $contentpayload[$contentId]['content-ID'] = $contentdata['fieldData']['content_id'];
+            $contentpayload[$contentId]['content-photo'] = $contentdata['fieldData']['content_photo_url'];
+            $contentpayload[$contentId]['content-type'] = $contentdata['fieldData']['content_type'];
+            $contentpayload[$contentId]['content-year'] = $contentdata['fieldData']['content_year'];
+        }
+        $contentdata[0]['found-records']=$content['response']['dataInfo']['foundCount'];
+        $contentdata[0]['total-records']=$content['response']['dataInfo']['totalRecordCount'];
+        $contentdata[0]['search-string']= $searchQuery;
+        return view('templates/header',array('userfname' => $userFirstName, 
+        'userlname' => $userLastName)) 
+        .view("content_search_page", array("contentpayload" => $contentpayload,
+                                            "contentdata"=>$contentdata));
+       
+        }
+        else
+        {
+            return redirect()->to('/login');
+        }
         
     }
 }

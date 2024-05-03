@@ -26,7 +26,7 @@ class Login extends BaseController
                 
                 $this->session->set('fname',$authResponse['response']['data'][0]['fieldData']['userFirstName']);
                 $this->session->set('lname',$authResponse['response']['data'][0]['fieldData']['userLastName']);
-
+                               
                 return redirect()->to('/content');
 
             }

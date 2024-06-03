@@ -4,7 +4,7 @@
 <!-- Header-->
     <header class="bg-custom">
         <div id="carouselWithSearch" class="position-relative">
-            <div id="searchBar" class="overlay d-flex align-items-center justify-content-center">
+            <div id="searchBar" class="overlay d-flex" style="max-height :100px; top:200px">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
@@ -22,35 +22,34 @@
                     <div class="carousel-item active" data-bs-interval="5000">
                         <div class="d-flex align-items-center">
                             <img src="<?php echo base_url() ?>assets/images/slider1bg.jpg" class="d-block" style="background-size: cover;" alt="">
+                           
                             <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
                                 <div class="container px-4 px-lg-5">
+                                    <a href="content/lists/Toptoday" style="text-decoration: none;">
                                     <h1 class="display-2 text-white">Top Today</h1>
                                     <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
+                                    </a>
                                 </div>
                             </div>
+                            
                         </div>
-                        </a>
+                        
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="d-flex align-items-center">
                             <img src="<?php echo base_url() ?>assets/images/slider2bg.jpg" class="d-block" style="background-size: cover;" alt="">
                             <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
                                 <div class="container px-4 px-lg-5">
+                                    <a href="content/lists/TopYesterday" style="text-decoration: none;">
                                     <h1 class="display-2 text-white">Top Yesterday</h1>
                                     <p class="lead fw-normal text-white-50 mb-0">Top handpicked movies and TV shows from yesterday</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                
             </div>
         </div>
     </header>
@@ -64,9 +63,9 @@
                     <a href="content/<?php echo $item['content-ID'] ?>">
                         <div class="card h-100 custom-rounded card-effect">
                             <!-- Product image-->
-                            <img class="card-img-top custom-rounded " src="<?php echo $item['content-photo'] ?>" alt="...">
+                            <img class="card-img-top custom-rounded" src="<?php echo $item['content-photo']?>" alt="...">
                             <div class="card-img-overlay custom-rounded">
-                               
+                                <h5 class="card-subtitle "><?php echo $item['content-name'] ?></h5>
                                 <p class="card-subtitle "><?php echo $item['content-type'] ?></p>
                                 <p class="card-subtitle text-muted"><?php echo $item['content-year'] ?></p>
                             </div>
@@ -80,7 +79,7 @@
 <!-- Footer-->
 <footer class="py-5 bg-custom">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Dittoweb 2023</p>
     </div>
 </footer>
 <!-- Bootstrap core JS-->

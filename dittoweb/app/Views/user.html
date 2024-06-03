@@ -3,57 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Search Results</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Movie Details</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .custom-search-input {
-      max-width: 300px; /* Adjust the width as needed */
+    body {
+      background-color: #f8f9fa;
+    }
+    .movie-details {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .movie-details h2 {
+      color: #333333;
+    }
+    .movie-details p {
+      color: #666666;
+    }
+    .movie-poster {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-
-  <div class="container mt-5">
-    
-    <!-- Search Bar -->
-    <form class="mb-4 text-center">
-      <div class="input-group input-group-sm justify-content-center">
-        <input type="text" class="form-control custom-search-input" placeholder="Search for movies...">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">Search</button>
-        </div>
-      </div>
-    </form>
-
-    <!-- Number of Search Results -->
-    <p class="mb-3">Showing <span id="numResults">0</span> results</p>
-
+  <div class="container my-5">
     <div class="row">
-      <!-- Example movie card, repeat as needed for each search result -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Movie Poster">
-          <div class="card-body">
-            <h5 class="card-title">Movie Title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
+      <div class="col-md-4">
+        <img src="movie_poster.jpg" class="img-fluid movie-poster" alt="Movie Poster">
+      </div>
+      <div class="col-md-8">
+        <div class="movie-details">
+          <h2>Title of the Movie</h2>
+          <p><strong>Genre:</strong> Action, Adventure</p>
+          <p><strong>Release Date:</strong> January 1, 2024</p>
+          <p><strong>Director:</strong> John Doe</p>
+          <p><strong>Cast:</strong> Actor 1, Actor 2, Actor 3</p>
+          <p><strong>Plot Summary:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae quam lectus. Sed at urna at odio fringilla ullamcorper eu at ex.</p>
+          <p><strong>Rating:</strong> 7.5/10</p>
+          <p><strong>Runtime:</strong> 120 minutes</p>
+          <p><strong>Language:</strong> English</p>
+          <p><strong>Country:</strong> United States</p>
         </div>
       </div>
-      <!-- End of movie card example -->
     </div>
   </div>
 
-  <!-- Bootstrap JS (optional) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom JavaScript -->
-  <script>
-    // Example JavaScript to update the number of search results
-    document.getElementById('numResults').innerText = document.querySelectorAll('.card').length;
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

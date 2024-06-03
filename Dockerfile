@@ -2,6 +2,8 @@ FROM php:8.2.12-apache
 
 
 COPY dittoweb/ /var/www/dittoweb.com/
+COPY ./configs/custom-apache.conf /etc/apache2/sites-available/custom-apache.conf
+
 
 #define servername as localhost
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf

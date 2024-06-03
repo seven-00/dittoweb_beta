@@ -20,7 +20,7 @@ class Login extends BaseController
        $authResponseCode = $authResponse['messages'][0]['code'];
        if($authResponseCode =='0' )
        {
-            if ($authResponse['response']['data'][0]['fieldData']['userPass']==$password)
+            if ($authResponse['response']['data'][0]['fieldData']['userPass']===$password)
             {
                 $this->session->set('user',$authResponse['response']['data'][0]['fieldData']['userId']);
                 

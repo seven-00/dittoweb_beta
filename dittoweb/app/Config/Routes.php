@@ -32,7 +32,9 @@ $routes->get('/content/(:segment)',[Content::class, 'content_details']);
 $routes->post('content/add_review/(:segment)',[Content::class, 'add_review']);
 $routes->post('content/dynamicload','Content::dynamic_load');
 $routes->post('content','Content::search_content');
+$routes->get('content/lists/(:segment)',[Content::class,'content_list']);
 
 
 #user routes
 $routes->get('/user','User::user_details');
+$routes->get('/testapi','User::user_test');

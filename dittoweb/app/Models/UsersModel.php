@@ -28,8 +28,8 @@ class UsersModel extends Fmcon{
 
     function genToken()
     {
-        $getToken = new TokenModel();
-        $jsondata = $getToken->getToken();
+        $tokenmodel = new TokenModel();
+        $jsondata = $tokenmodel->getToken();
         $token = $jsondata['response']['token'];
         return $token;
     }
@@ -72,5 +72,4 @@ class UsersModel extends Fmcon{
         );
         return $this->connection($curlopts,$headers);
     }
-
 }

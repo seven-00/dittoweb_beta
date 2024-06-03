@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\UsersModel;
-use App\Models\ReviewModel;
-use PHPUnit\Logging\TestDox\HtmlRenderer;
+use Filemaker\Fmdapi;
+
+require './vendor/testapi/Fmdapi.php';
 
 class User extends BaseController
 {
@@ -20,6 +21,18 @@ class User extends BaseController
         return view('templates/header',array("userfname"=>$userfname,
                                              "userlname"=>$userlname))
             .view("user_details",array("userData" => $userData));
+    }
+
+    public function user_test()
+    {
+       $fm = new Fmdapi();
+       $layoutName = "content_details";
+       $ID ="content_23";
+       $IDfield ="content_id";
+       $res  = $fm->getOneRecord($layoutName,$ID,$IDfield);
+        echo "<pre>";
+        print_r($res);
+       
     }
   
 }

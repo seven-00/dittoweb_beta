@@ -1,7 +1,6 @@
 <?php
-
-namespace App\Database;
-class Fmcon{
+namespace Filemaker;
+class Fmdbcon{
      function connection($data,$headers)
     {
             $con = curl_init();
@@ -20,8 +19,5 @@ class Fmcon{
             
             return $jsonResponse;         
     }
-    public function ExpiredCon()
-    {
-                
-    }
+
 }

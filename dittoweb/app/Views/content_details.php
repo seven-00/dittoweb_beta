@@ -4,7 +4,7 @@
         <div class="container px-4 px-lg-5 my-5 ">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-4">
-                    <img class="card-img-top mb-5 mb-md-0 custom-rounded" src="<?php echo $contentdatapayload['content_photo_url'] ?>" alt="..." />
+                    <img class="card-img-top mb-5 mb-md-0 custom-rounded" src=<?php echo $contentdatapayload['content_photo_url'] ?> alt="..." />
                 </div>
                 <div class="col-md-6 text-white bg-dark custom-rounded">
 
@@ -181,7 +181,7 @@
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Dittoweb 2023</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

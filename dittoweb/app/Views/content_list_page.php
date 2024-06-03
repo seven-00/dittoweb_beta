@@ -3,27 +3,14 @@
 </div>
 <!-- Header--> 
 <header class="bg-custom py-5">
-        <div id="searchBar" class=" d-flex align-items-center justify-content-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        <form class="d-flex justify-content-center" method="post" action="/dittoweb.com/content">
-                            <div class="input-group">
-                                <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" id="searchInput" value="<?php echo $contentdata[0]['search-string']?>">4
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div>
+        <h1>list name will be here</h1>
+       </div>
 </header>
 <!-- Section-->
 <section class="py-5 bg-custom">
-
     <div class="container px-4 px-lg-5 mt-5">
-    <p class="text-muted">Search results <?php echo $contentdata[0]['found-records']." of ".$contentdata[0]['total-records']." for '".$contentdata[0]['search-string']."'"?>  </p>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="data">
-       
             <?php foreach ($contentpayload as $item) { ?>
                 <div class="col mb-5">  
                     <a href="content/<?php echo $item['content-ID'] ?>">

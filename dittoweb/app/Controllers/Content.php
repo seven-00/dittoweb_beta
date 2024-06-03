@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\ContentModel;
 use App\Models\UsersModel;
 use App\Models\ReviewModel;
-use PHPUnit\Logging\TestDox\HtmlRenderer;
+
 
 use function PHPSTORM_META\type;
 
@@ -34,6 +34,8 @@ class Content extends BaseController
             $contentpayload[$contentId]['content-type'] = $contentdata['fieldData']['content_type'];
             $contentpayload[$contentId]['content-year'] = $contentdata['fieldData']['content_year'];
         }
+        // echo "<pre>";
+        // print_r($contentpayload);
 
         return view('templates/header',array('userfname' => $userFirstName,
         'userlname' => $userLastName)) 
@@ -120,7 +122,7 @@ class Content extends BaseController
                 <a href="content/' . $item['content-ID'] . '">
                 <div class="card h-100 custom-rounded card-effect">
                     <!-- Product image-->
-                    <img class="card-img-top custom-rounded" src="' . $item['content-photo'] . '" height="300" alt="..." />
+                    <img class="card-img-top custom-rounded" src="'.$item['content-photo'].'" height="300" alt="..." />
                     <div class="card-img-overlay custom-rounded"> 
                         <h5 class="card-title ">' . $item['content-name'] . '</h5>
                         <p class="card-subtitle">' . $item['content-type'] . '</p>
@@ -174,5 +176,8 @@ class Content extends BaseController
             return redirect()->to('/login');
         }
         
+    }
+    public function content_list($contentList){
+        echo $contentList;
     }
 }
